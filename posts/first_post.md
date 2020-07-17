@@ -1,33 +1,3 @@
-# Markdown reader
-
-0. Should start a web server
-1. Should be able to serve a file
-2. Third thing to do
-
-> this is a quotation
-
-
-```javascript
-function abc() {
-  if(true) {
-    return 123
-  }
-  console.log(55)
-}
-```
-
-* Bullet
-* List of
-* Items
-
----
-
-- [X] Another
-- [ ] List
-- [ ] Of
-- [ ] Items
-
-
 # Heading 1
 
 ## Heading 2
@@ -38,6 +8,13 @@ function abc() {
 
 ---
 
-I am a **bold** text along with some _italics_
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-I am another [link](www.google.com) you can click on me.
+
+> An eye for an eye makes the whole world blind. - Gandhi
+
