@@ -1,5 +1,3 @@
-posts_folder_path: posts/
-
-blog_name: Markdown Flavoured Flask Blog
-
-theme: style
+POSTS_DIR: posts/
+BLOG_TITLE: Markdown Flavoured Flask Blog
+THEME: style

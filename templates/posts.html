@@ -8,10 +8,10 @@
 </head>
 <body>
   
-  <h1>List of Posts</h1>
+  <h1>{{ data['blog_title'] }}</h1>
 
   <ul>
-    {% for post in posts %}
+    {% for post in data['posts'] %}
     <li>
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     </li>
