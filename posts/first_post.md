@@ -18,3 +18,24 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 > An eye for an eye makes the whole world blind. - Gandhi
 
+This is a **bold text** and this is an _italic text_.
+
+
+You can even write `code snippets` like
+
+```javascript
+
+function abc() {
+  var x = 123;
+  console.log(x);
+}
+```
+
+
+You can even create tables like
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
