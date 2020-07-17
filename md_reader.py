@@ -5,15 +5,15 @@ import yaml
 
 app = Flask(__name__)
 config = {}
-posts = []
 
 if os.path.exists('config.yaml'):
     config = yaml.load(open('config.yaml', 'r'), Loader=yaml.FullLoader)
     post_files = [f for f in os.listdir(config['POSTS_DIR']) if os.path.isfile(os.path.join(config['POSTS_DIR'], f))]
+    config['posts'] = []
 
     for pf in post_files:
         fname = os.path.splitext(pf)[0]
-        posts.append({
+        config['posts'].append({
             'title': ' '.join(fname.split('_')),
             'url': os.path.join(config['POSTS_DIR'], pf)
         })
@@ -25,7 +25,7 @@ else:
 def all_posts():
     return render_template('posts.html', data={
         'blog_title': config['BLOG_TITLE'],
-        'posts': posts
+        'posts': config['posts']
     })
 
 
