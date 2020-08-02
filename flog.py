@@ -1,6 +1,7 @@
 import os
 import mistune
 from flask import Flask, render_template
+import datetime as dt
 import yaml
 
 app = Flask(__name__)
@@ -13,15 +14,22 @@ def load_yaml():
 
 def load_posts():
     config = load_yaml()
-    post_files = [f for f in os.listdir(config['POSTS_DIR']) if os.path.isfile(os.path.join(config['POSTS_DIR'], f))]
-    config['posts'] = []
+    if config != False:
+        post_files = [f for f in os.listdir(config['POSTS_DIR']) if os.path.isfile(os.path.join(config['POSTS_DIR'], f))]
+        config['posts'] = []
 
-    for pf in post_files:
-        fname = os.path.splitext(pf)[0]
-        config['posts'].append({
-            'title': ' '.join(fname.split('_')),
-            'url': os.path.join(config['POSTS_DIR'], pf)
-        })
+        for pf in post_files:
+            fname = os.path.splitext(pf)[0]
+            url = os.path.join(config['POSTS_DIR'], pf)
+            created_date = dt.datetime.fromtimestamp(os.path.getctime(str(url)))
+
+            config['posts'].append({
+                'title': ' '.join(fname.split('_')),
+                'url': url,
+                'tstp': created_date,
+                'created_date': created_date.strftime('%d %b %y')
+            })
+    config['posts'].sort(key=lambda x:x['tstp'], reverse=True)
     return config
 
 
